@@ -1,0 +1,19 @@
+services:
+  worker:
+    build: .
+    environment:
+      BOT_TOKEN: $BOT_TOKEN
+      API_ID: $API_ID
+      API_HASH: $API_HASH
+      MONGODB_URI: $MONGODB_URI
+      BOT_OWNER: $BOT_OWNER
+      LOG_CHANNEL: $LOG_CHANNEL
+      UPDATES_CHANNEL: $UPDATES_CHANNEL
+      TIME_GAP: $TIME_GAP
+      MAX_VIDEOS: $MAX_VIDEOS
+      STREAMTAPE_API_USERNAME: $STREAMTAPE_API_USERNAME
+      STREAMTAPE_API_PASS: $STREAMTAPE_API_PASS
+      BROADCAST_AS_COPY: $BROADCAST_AS_COPY
+    resources:
+      cpu: 1000m
+      memory: 3Gi

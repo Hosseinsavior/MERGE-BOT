@@ -94,7 +94,7 @@ async def getUserRcloneConfig(uid):
 
 
 def getUserMergeMode(uid: int):
-    "Returns merge mode of user"
+    """Returns merge mode of user"""
     try:
         res_cur = Database.mergebot.mergeModes.find_one({"_id": uid})
         return int(res_cur["mode"])
@@ -117,6 +117,7 @@ def setUserMergeMode(uid: int, mode: int):
             )
             LOGGER.info("User {} Mode updated to {}".format(uid, modes[mode-1]))
         MERGE_MODE[uid] = mode
+    # The following lines are commented out because they were not used in this version of the code.
     # elif mode == 2:
     #     try:
     #         Database.mergebot.mergeModes.insert_one(
@@ -144,4 +145,6 @@ def setUserMergeMode(uid: int, mode: int):
     #         )
     #         LOGGER.info("User {} Mode updated to {}".format(uid, modes[2]))
     #     MERGE_MODE[uid]=3
-    LOGGER.info(MERGE_MODE)
+    LOGGER.info(MERGE_MODE) 
+
+
